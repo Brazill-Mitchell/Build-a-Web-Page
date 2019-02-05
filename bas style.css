@@ -1,0 +1,34 @@
+@media (max-width:500px) {
+  #nav-container{
+    flex-direction: column;
+    justify-content: center;
+    width: 15%;
+    min-width: 50px;
+    background-color: rgba(0,0,255,.4);
+
+
+
+
+
+
+  }
+}
+
+#nav-container{
+  display: flex;
+}
+
+.nav-container{
+  width: 100%;
+  justify-content: center;
+
+}
+
+.navigation-item{
+  margin: 10px;
+  width: auto;
+}
+
+.vertical-element-container{
+
+}
