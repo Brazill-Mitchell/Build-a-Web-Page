@@ -6,11 +6,6 @@
     min-width: 50px;
     background-color: rgba(0,0,255,.4);
 
-
-
-
-
-
   }
 }
 
@@ -24,11 +19,25 @@
 
 }
 
+
+.vertical-element-container{
+/*    background-color: yellow;*/
+}
+
+.head-style{
+background-color: rgba(0,0,255,.4);
+}
 .navigation-item{
   margin: 10px;
   width: auto;
+  font-size: 25px;
 }
-
-.vertical-element-container{
+.nav-style{
+  background-color: rgba(0,255,0,.4);
+}
+.field-style{
+/*  background-color: rgba(255, 0, 0, 0.5);*/
+}
+.line-break-div{
 
 }

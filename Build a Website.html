@@ -27,21 +27,33 @@
     </script>
     <meta charset="utf-8">
 
-    <div id="page-title"> Build an Amazing Web Page </div>
+    <h1 id="page-title" class="head-style"> Build an Amazing Web Page </h1>
     <title></title>
+
     <div id="nav-container" class="nav-container">
-    <div class="navigation-item">Nav item 1</div>
-    <div class="navigation-item">Nav item 2</div>
-    <div class="navigation-item">Nav item 3</div>
-    <div class="navigation-item">Nav item 4</div>
+    <div class="navigation-item nav-style">Nav item 1</div>
+    <div class="navigation-item nav-style">Nav item 2</div>
+    <div class="navigation-item nav-style">Nav item 3</div>
+    <div class="navigation-item nav-style">Nav item 4</div>
     </div>
 
   </head>
   <body>
-<input id="element-name-input"></input>
-<input type="text" id="user-input" name="" value=""></input>
+    <div class="line-break-div">
+      <select id="style-menu" onchange="changeStyle()">
+        <option class="style-options" value="1">Style 1</option>
+        <option class="style-options" value="2">Style 2</option>
+        <option class="style-options" value="3">Style 3</option>
+        <option class="style-options" value="4">Style 4</option>
+        <option class="style-options" value="5">Style 5</option>
+      </select>
+    </div>
 
+      
+<!--<input id="element-name-input"></input>-->
+<input type="text" id="user-input" name="" value="Type here"></input>
 
+<!--Selects the type of element to create-->
 <select id="type-menu">
   <option value="div">div</option>
   <option value="h1">h1</h1>
@@ -60,6 +72,7 @@
     <option value="purple">button</h1>
   </select>
 
+<!--Adds the custom element to the page-->
 <button type="button" id="add-button" class="btn btn-default" >
   Add
 <script type="text/jsx">
@@ -73,11 +86,26 @@
 </script>
 
 </button>
+<!--Test Button-->
+<!--
+<button type="button" id="test-button" class="btn btn-default" >
+  Test
+<script type="text/jsx">
+  const testButton = document.getElementById("test-button");
+  testButton.onclick = function(){
+    changeStyle();
+  }
+</script>
+
+</button>
+-->
 
 
+<!--Test area only
 <div id="test-div">
   Test Div
   </div>
+-->
 
 <div id="first-container" class="vertical-element-container">
   <script type="text/jsx">

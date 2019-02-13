@@ -5,7 +5,7 @@ function getUserInput(){
 
 }
 
-const elementTypes = {
+let elementTypes = {
   div: "div",
   h1: "h1",
   h2: "h2",
@@ -26,6 +26,8 @@ function createElement(){
   newElement.id = createId;
   newElement.style.width = "50%";
   newElement.style.color = userColor;
+    newElement.style.backgroundColor = "inherit";
+  newElement.className = "field-style";
   newElement.innerHTML = userText;
   fieldIdList.push(newElement.id);
   document.getElementById("first-container").appendChild(newElement);
@@ -39,23 +41,67 @@ function createId(){
     fieldIdList.push(randomId);
     return newId;
   }else{
+    // var maxID = getMax();
     var lastID = fieldIdList[fieldIdList.length-1];
     var newId = lastID+.1;
     fieldIdList.push(newId);
     return newId;
   }
-
+}
+// Gets the highest existing id, then increases it to create a new one
+function getMax(){
+    Array.prototype.max = function() {
+    return Math.max.apply(null, this);
+  };
+  console.log(fieldIdList.max());
+  return fieldIdList.max.apply(null,this);
 }
 
+function changeStyle(){
+    let selectedStyle = document.getElementById("style-menu").value;
+    changeCustomElementStyle(selectedStyle);
+    changeNavStyle(selectedStyle);
+    changeBannerStyle(selectedStyle);
 
+    //    test
+//    document.getElementById("test-div").innerHTML = document.getElementById("style-menu").value;
+}
 
-// function createElement(){
-//   var userText = document.getElementById("user-input").value;
-//   var newElement = document.createElement("div");
-//   newElement.id = "newElement";
-//   newElement.innerHTML = userText;
-//   newElement.style.width = "50%";
-//   newElement.style.backgroundColor = "red";
-//   document.getElementById("first-container").appendChild(newElement);
-//
-// }
+function changeCustomElementStyle(style){
+    let color;
+    switch(style){
+        case "1": color = "rgba(255,0,0,.4)"; break;
+        case "2": color = "rgba(205,100,0,.4)"; break;
+        case "3": color = "rgba(210,200,0,.4)"; break;
+        case "4": color = "rgba(0,255,0,.4)"; break;
+        case "5": color = "rgba(0,0,255,.4)"; break;
+    }
+    const parent = document.getElementById("first-container");
+    parent.style.backgroundColor = color;
+}
+
+function changeNavStyle(style){
+    let color;
+    switch(style){
+        case "1": color = "rgba(255,0,0,.4)"; break;
+        case "2": color = "rgba(205,100,0,.4)"; break;
+        case "3": color = "rgba(210,200,0,.4)"; break;
+        case "4": color = "rgba(0,255,0,.4)"; break;
+        case "5": color = "rgba(0,0,255,.4)"; break;
+    }
+    const navItems = document.getElementsByClassName("nav-style");
+    for (var x = 0; x < navItems.length; x++){
+        navItems[x].style.backgroundColor = color;
+    }
+}
+function changeBannerStyle(style){
+    let color;
+    switch(style){
+        case "1": color = "rgba(255,0,0,.4)"; break;
+        case "2": color = "rgba(205,100,0,.4)"; break;
+        case "3": color = "rgba(210,200,0,.4)"; break;
+        case "4": color = "rgba(0,255,0,.4)"; break;
+        case "5": color = "rgba(0,0,255,.4)"; break;
+    }
+    document.getElementById("page-title").style.backgroundColor = color;
+}
